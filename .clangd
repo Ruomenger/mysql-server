@@ -1,0 +1,25 @@
+CompileFlags:
+  Remove: 
+   - -Wunused-function
+Diagnostics:
+  UnusedIncludes: None
+  ClangTidy:
+    Remove:
+      - readability-magic-numbers
+      - readability-implicit-bool-conversion 
+      - cppcoreguidelines-pro-type-cstyle-cast
+      - google-readability-casting 
+      - performance-no-int-to-ptr 
+      - cppcoreguidelines*
+      - readability*
+      - bugprone*
+      - modernize-use-nullptr
+      - llvm*
+      - google*
+InlayHints:
+  BlockEnd: No
+  Designators: Yes
+  Enabled: No
+  ParameterNames: Yes
+  DeducedTypes: Yes
+  TypeNameLimit: 24

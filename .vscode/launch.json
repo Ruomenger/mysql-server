@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "mysqld start",
+            "program": "/usr/local/mysql/bin/mysqld",
+            "args": [
+                "--basedir=/usr/local/mysql",
+                "--datadir=/usr/local/mysql/data",
+                "--plugin-dir=/usr/local/mysql/lib/plugin",
+                "--log-error=/home/postgres/local/log/mysql/docker-desktop.err"
+            ],
+            "cwd": "${env:HOME}"
+        }
+    ]
+}
