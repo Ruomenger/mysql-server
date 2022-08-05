@@ -48,8 +48,8 @@ ENDIF()
 
 # Turn on Werror (warning => error) when using maintainer mode.
 IF(MYSQL_MAINTAINER_MODE)
-  STRING_APPEND(MY_C_WARNING_FLAGS   " -Werror")
-  STRING_APPEND(MY_CXX_WARNING_FLAGS " -Werror")
+  STRING_APPEND(MY_C_WARNING_FLAGS   " -Werror -Wno-unused-label")
+  STRING_APPEND(MY_CXX_WARNING_FLAGS " -Werror -Wno-unused-label")
 ENDIF()
 
 # Set warning flags for GCC/Clang
