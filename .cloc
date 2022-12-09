@@ -1,0 +1,3 @@
+.vscode
+cmake-build-Debug
+cmake-build-debug-wsl

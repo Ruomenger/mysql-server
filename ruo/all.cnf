@@ -1,0 +1,79 @@
+[client] 
+port = 13306 
+socket = /usr/local/mysql/mysql.sock 
+default-character-set = utf8mb4 
+ 
+[mysqld] 
+port = 13306 
+socket = /usr/local/mysql/mysql.sock 
+basedir = /usr/local/mysql 
+datadir = /usr/local/mysql/data 
+character-set-server = utf8mb4 
+collation-server = utf8mb4_unicode_ci 
+init_connect = 'SET NAMES utf8mb4' 
+server-id = 1 
+log-slave-updates=true 
+skip-external-locking 
+skip-name-resolve 
+back_log = 300 
+table_open_cache = 128 
+max_allowed_packet = 16M 
+read_buffer_size = 8M 
+read_rnd_buffer_size = 64M 
+sort_buffer_size = 16M 
+join_buffer_size = 8M 
+key_buffer_size = 128M 
+thread_cache_size = 16 
+log-bin = mysql-bin 
+binlog_format = row 
+######主从 
+log-slave-updates = true 
+######慢日志 
+slow_query_log = on 
+long_query_time = 1 
+slow_query_log_file = /usr/local/mysql/logs/db-slow.log 
+gtid_mode = ON 
+enforce_gtid_consistency = ON 
+expire_logs_days = 7    
+default_storage_engine = InnoDB 
+innodb_buffer_pool_size = 1G 
+innodb_data_file_path = ibdata1:10M:autoextend 
+innodb_file_per_table = on 
+innodb_write_io_threads = 4 
+innodb_read_io_threads = 4 
+innodb_thread_concurrency = 8 
+innodb_purge_threads = 1 
+innodb_flush_log_at_trx_commit = 1 
+innodb_log_buffer_size = 8M 
+innodb_log_file_size = 512M 
+innodb_log_files_in_group = 3 
+innodb_max_dirty_pages_pct = 90 
+innodb_lock_wait_timeout = 60 
+max_connections = 5000 
+interactive_timeout = 28800 
+wait_timeout = 28800 
+sql_mode = STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION 
+symbolic-links=0 
+######时间参数 
+log_timestamps=SYSTEM 
+ 
+[mysqldump] 
+quick 
+max_allowed_packet = 32M 
+ 
+[mysql] 
+no-auto-rehash 
+default-character-set = utf8mb4 
+ 
+[myisamchk] 
+key_buffer_size = 64M 
+sort_buffer_size = 64M 
+read_buffer = 8M 
+write_buffer = 8M 
+ 
+[mysqlhotcopy] 
+interactive-timeout 
+ 
+[mysqld_safe] 
+log-error = /usr/local/mysql/logs/mysql_err.log 
+pid-file = /usr/local/mysql/mysqld.pid

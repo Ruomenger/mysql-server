@@ -1,0 +1,6 @@
+Diagnostics:
+  ClangTidy:
+    Remove: misc-unused-using-decls
+  Suppress: unused-but-set-variable
+CompileFlags:
+  Remove: [-fabi-version=2]
